@@ -42,6 +42,7 @@ table {
 	border-spacing: 0;
 }
 
+@view-transition { navigation: auto; }
 
 @keyframes slideInRight {
   from { transform: translateX(100%); }

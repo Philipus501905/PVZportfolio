@@ -6,20 +6,14 @@ document.querySelectorAll('a').forEach(function(link) {
       e.preventDefault();
       return;
     }
-    e.preventDefault();
-    let direction;
     if (href.includes('projecten')) {
-      direction = 'forward';
+      sessionStorage.setItem('direction', 'forward');
     } else if (href.includes('bewijs')) {
-      direction = 'up';
+      sessionStorage.setItem('direction', 'up');
     } else if (window.location.pathname.includes('bewijs')) {
-      direction = 'down';
+      sessionStorage.setItem('direction', 'down');
     } else {
-      direction = 'back';
+      sessionStorage.setItem('direction', 'back');
     }
-    document.documentElement.dataset.direction = direction;
-    document.startViewTransition(() => {
-      window.location.href = href;
-    });
   });
 });
