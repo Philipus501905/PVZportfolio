@@ -6,7 +6,6 @@ document.querySelectorAll('a').forEach(function(link) {
       e.preventDefault();
       return;
     }
-    e.preventDefault();
     if (href.includes('projecten')) {
       document.documentElement.dataset.direction = 'forward';
     } else if (href.includes('bewijs')) {
@@ -16,8 +15,5 @@ document.querySelectorAll('a').forEach(function(link) {
     } else {
       document.documentElement.dataset.direction = 'back';
     }
-    document.startViewTransition(() => {
-      window.location.href = href;
-    });
   });
 });
