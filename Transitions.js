@@ -6,15 +6,18 @@ document.querySelectorAll('a').forEach(function(link) {
       e.preventDefault();
       return;
     }
+    let direction;
     if (href.includes('projecten')) {
-      sessionStorage.setItem('direction', 'forward');
+      direction = 'forward';
     } else if (href.includes('bewijs')) {
-      sessionStorage.setItem('direction', 'up');
+      direction = 'up';
     } else if (window.location.pathname.includes('bewijs')) {
-      sessionStorage.setItem('direction', 'down');
+      direction = 'down';
     } else {
-      sessionStorage.setItem('direction', 'back');
+      direction = 'back';
     }
+    document.documentElement.dataset.direction = direction;
+    sessionStorage.setItem('direction', direction);
   });
 });
 
