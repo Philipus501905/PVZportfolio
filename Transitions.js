@@ -6,5 +6,8 @@ document.querySelectorAll('a').forEach(function(link) {
       e.preventDefault();
       return;
     }
+    if (href.includes('bewijs')) {
+      document.documentElement.dataset.direction = 'up';
+    }
   });
 });
