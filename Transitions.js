@@ -6,14 +6,5 @@ document.querySelectorAll('a').forEach(function(link) {
       e.preventDefault();
       return;
     }
-    if (href.includes('projecten')) {
-      sessionStorage.setItem('direction', 'forward');
-    } else if (href.includes('bewijs')) {
-      sessionStorage.setItem('direction', 'up');
-    } else if (window.location.pathname.includes('bewijs')) {
-      sessionStorage.setItem('direction', 'down');
-    } else {
-      sessionStorage.setItem('direction', 'back');
-    }
   });
 });
