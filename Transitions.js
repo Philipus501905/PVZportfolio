@@ -6,6 +6,7 @@ document.querySelectorAll('a').forEach(function(link) {
       e.preventDefault();
       return;
     }
+    e.preventDefault();
     let direction;
     if (href.includes('projecten')) {
       direction = 'forward';
@@ -18,6 +19,9 @@ document.querySelectorAll('a').forEach(function(link) {
     }
     document.documentElement.dataset.direction = direction;
     sessionStorage.setItem('direction', direction);
+    document.startViewTransition(() => {
+      window.location.href = href;
+    });
   });
 });
 
