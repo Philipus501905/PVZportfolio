@@ -15,7 +15,9 @@ document.querySelectorAll('a').forEach(function(link) {
     }
     const currentPage = window.location.pathname;
     if (href.includes('projecten')) {
-      sessionStorage.setItem('direction', 'forward');
+      // treat 'projecten' as moving forward (underground) — store 'up' to match CSS
+      sessionStorage.setItem('direction', 'up');
+      try { document.documentElement.dataset.direction = 'up'; } catch (e) {}
     } else if (href.includes('bewijs')) {
       sessionStorage.setItem('direction', 'up');
     } else if (href.includes('index')) {
