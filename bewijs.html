@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Philip Somers</title>
     <link href="style.css" rel="stylesheet"/>
+    <script>
+  const d = sessionStorage.getItem('direction');
+  if (d) {
+    document.documentElement.dataset.direction = d;
+    sessionStorage.removeItem('direction');
+  }
+</script>
 </head>
 
 
