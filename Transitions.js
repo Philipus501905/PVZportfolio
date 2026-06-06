@@ -7,13 +7,19 @@ document.querySelectorAll('a').forEach(function(link) {
       return;
     }
     if (href.includes('projecten')) {
-      document.documentElement.dataset.direction = 'forward';
+      sessionStorage.setItem('direction', 'forward');
     } else if (href.includes('bewijs')) {
-      document.documentElement.dataset.direction = 'up';
+      sessionStorage.setItem('direction', 'up');
     } else if (window.location.pathname.includes('bewijs')) {
-      document.documentElement.dataset.direction = 'down';
+      sessionStorage.setItem('direction', 'down');
     } else {
-      document.documentElement.dataset.direction = 'back';
+      sessionStorage.setItem('direction', 'back');
     }
   });
 });
+
+const direction = sessionStorage.getItem('direction');
+if (direction) {
+  document.documentElement.dataset.direction = direction;
+  sessionStorage.removeItem('direction');
+}
