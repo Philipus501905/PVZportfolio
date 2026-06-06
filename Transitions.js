@@ -1,3 +1,10 @@
+// On page load, apply any persisted direction (fallback when View Transitions isn't available)
+const _savedDirection = sessionStorage.getItem('direction');
+if (_savedDirection) {
+  document.documentElement.dataset.direction = _savedDirection;
+  sessionStorage.removeItem('direction');
+}
+
 document.querySelectorAll('a').forEach(function(link) {
   link.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
@@ -17,6 +24,7 @@ document.querySelectorAll('a').forEach(function(link) {
 
     // Allow author to override per-link using data-direction attribute (up/down/back/left/right)
     let direction = this.dataset.direction;
+    if (direction === 'forward') direction = 'up';
 
     // If no explicit direction, compute from an ordered list of pages
     if (!direction) {
@@ -39,6 +47,10 @@ document.querySelectorAll('a').forEach(function(link) {
       }
     }
 
+    // Persist direction so the landing page can read it if the browser does a full reload
+    try { sessionStorage.setItem('direction', direction); } catch (err) { /* noop */ }
+
+    // Apply immediately for single-page-like navigation (View Transitions)
     document.documentElement.dataset.direction = direction;
 
     // Use the View Transitions API when available so CSS ::view-transition rules apply
