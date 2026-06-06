@@ -18,15 +18,8 @@ document.querySelectorAll('a').forEach(function(link) {
       direction = 'back';
     }
     document.documentElement.dataset.direction = direction;
-    sessionStorage.setItem('direction', direction);
     document.startViewTransition(() => {
       window.location.href = href;
     });
   });
 });
-
-const direction = sessionStorage.getItem('direction');
-if (direction) {
-  document.documentElement.dataset.direction = direction;
-  sessionStorage.removeItem('direction');
-}
