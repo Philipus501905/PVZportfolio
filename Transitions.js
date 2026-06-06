@@ -7,7 +7,7 @@ document.querySelectorAll('a').forEach(function(link) {
       return;
     }
     const currentPage = window.location.pathname;
-    if (href.includes('Projecten')) {
+    if (href.includes('projecten')) {
       sessionStorage.setItem('direction', 'forward');
     } else if (href.includes('bewijs')) {
       sessionStorage.setItem('direction', 'up');
