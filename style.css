@@ -555,4 +555,12 @@ nav.Watersley-nav .nav-Watersley-link img {
 .Watersley-close-wrap:hover .Watersley-close-default { opacity: 0; }
 .Watersley-close-wrap:hover .Watersley-close-hover   { opacity: 1; }
 
+/* Clickable image used on bewijs.html */
+.clickable-img {
+  cursor: pointer;
+  display: block;
+  max-width: 80%;
+  margin: 60px auto;
+}
+
 
