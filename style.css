@@ -263,10 +263,12 @@ body.bewijs-page {
   background-image: url('img/Underground3.png');
   background-size: cover;
   background-attachment: scroll;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   padding: 0;
   margin: 0;
   background-repeat: repeat-y;
+  overflow-y: auto;
 }
 
 .return-link-wrapper {
