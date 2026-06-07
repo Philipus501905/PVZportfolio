@@ -295,14 +295,14 @@ body.bewijs-page{
 .return-link-wrapper:hover .img-default { opacity: 0; }
 .return-link-wrapper:hover .img-hover   { opacity: 1; }
 
-.bewijs-items {
+.B1-K1-W1 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   padding: 8px 16px;
 }
 
-.bewijs-items a {
+.B1-K1-W1 a {
   display: inline-block;
 }
 
