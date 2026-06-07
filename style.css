@@ -556,11 +556,27 @@ nav.Watersley-nav .nav-Watersley-link img {
 .Watersley-close-wrap:hover .Watersley-close-hover   { opacity: 1; }
 
 /* Clickable image used on bewijs.html */
+.bewijs-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 40px 24px 80px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.bewijs-item {
+  display: block;
+  text-align: center;
+}
+
 .clickable-img {
   cursor: pointer;
-  display: block;
-  max-width: 80%;
-  margin: 60px auto;
+  display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 
