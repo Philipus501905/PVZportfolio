@@ -334,6 +334,10 @@ body.bewijs-page {
   top: 60px;
   left: 140px;
 }
+
+.bewijs-header--large {
+  height: 50px;
+}
 /* Hier begint de code voor de projecten pagina */
 
 body {
